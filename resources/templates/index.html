@@ -1,0 +1,87 @@
+<html>
+<body>
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+<form action="/create-book" method="post">
+    <input type="text" placeholder="Book name" name="bookName" width="200"/>
+    <label>
+        <select name="bookGenre">
+            <option selected disabled>Genre</option>
+            <option value="Adventure">Fiction</option>
+            <option value="NonFiction">NonFiction</option>
+            <option value="Romance">Romance</option>
+            <option value="TextBook">TextBook</option>
+            <option value="Comics">Comics</option>
+            <option value="Magazine">Magazine</option>
+        </select>
+    </label>
+    <label>
+        <select name="bookPlatform">
+            <option selected disabled>Platform</option>
+            <option value="Ebooks">Ebooks</option>
+            <option value="PaperBack">PaperBack</option>
+            <option value="HardCover">HardCover</option>
+            <option value="Spiral Bound">Spiral Bound</option>
+        </select>
+    </label>
+    <input type="number" placeholder="Release Year" name="bookYear"/>
+    <button type="submit">Create Book</button>
+</form>
+
+<form action="/delete-book" method="post">
+    <input type="number" placeholder="Book ID" name="id" width="125"/>
+    <button type="submit">Delete Book</button>
+</form>
+
+<form action="/edit-book" method="post">
+    <input type="number" placeholder="Enter the Book ID" name="ID"/>
+    <input type="text" placeholder="New name" name="bookName" width="200"/>
+    <label>
+        <select name="bookGenre">
+            <option selected disabled>Genre</option>
+            <option value="Adventure">Fiction</option>
+            <option value="NonFiction">NonFiction</option>
+            <option value="Romance">Romance</option>
+            <option value="TextBook">TextBook</option>
+            <option value="Comics">Comics</option>
+            <option value="Magazine">Magazine</option>
+        </select>
+    </label>
+
+    <label>
+        <select name="bookPlatform">
+            <option selected disabled>Platform</option>
+            <option value="Ebook">Ebook</option>
+            <option value="PaperBack">PaperBack</option>
+            <option value="HardCover">HardCover</option>
+            <option value="Spiral Bound">Spiral Bound</option>
+        </select>
+    </label>
+    <input type="number" placeholder="Release Year" name="bookYear"/>
+    <button type="submit">Edit Book</button>
+</form>
+
+
+
+<table>
+    {{#books}}
+    <tr>
+        <th>Book Tittle</th>
+        <th>Book Genre</th>
+        <th>Book Platform</th>
+        <th>Book Released</th>
+        <th>Book ID #</th>
+    </tr>
+    <tr>
+        <td>{{name}}</td>
+        <td>{{genre}}</td>
+        <td>{{platform}}</td>
+        <td>{{releaseYear}}</td>
+        <td>{{id}}</td>
+        {{/books}}
+    </tr>
+</table>
+</body>
+</html>
